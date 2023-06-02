@@ -1,0 +1,200 @@
+
+/* import roboto font family */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+:root {
+    /* breakpoints */
+    --mobile-width: 23.4375rem;
+    --desktop-width: 90rem;
+    --tablet-width: 56.25rem;
+
+    /* colors */
+    --primary: hsl(4, 100%, 67%);
+    --gray-dark-slate: hsl(234, 29%, 20%);
+    --gray-charcoal: hsl(235, 18%, 26%);
+    --gray: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+    --transparent-border: rgba(146, 148, 160, 0.4);
+
+    /* font family */
+    --font-family: 'Roboto', sans-serif;
+    --font-weight-1: 400;
+    --font-weight-2: 700;
+}
+
+/* globals and utils */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--gray-dark-slate);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+.d-none {
+    display: none;
+}
+
+/* Markup CSS // mobile first*/
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);    
+}
+
+/* img section */
+.img-wrapper {
+    margin-bottom: 3.125rem;
+}
+
+.img-wrapper img {
+    max-width: 100%;
+}
+
+
+/* data/text sections == h1, list */
+
+.data-wrapper {
+    padding-left: 1.5625rem;
+    padding-right: 1.5625rem;
+}
+
+.data-wrapper h1 {
+    margin-bottom: 2.1875rem;
+    text-align: left;
+    font-size: 2.5rem;
+    color: var(--gray-dark-slate);
+    font-weight: var(--font-weight-2);  
+}
+
+/* messed up html structure so i used helper class for first p element inside data wrapper */
+.helper-class {
+    margin-bottom: 1.875rem;
+    line-height: 1.5;
+}
+
+.list-wrapper {
+    margin-bottom: 2rem;
+}
+
+.list-wrapper p {
+    margin-bottom: 1.4375rem;
+}
+
+.list-wrapper div {
+    display: flex;
+}
+
+.list-wrapper i {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-top: -0.3125rem;
+    margin-right: 1.0625rem;
+}
+
+/* form section == input, submit */
+.form-control {
+    display: grid;
+}
+
+.form-control label {
+    font-weight: var(--font-weight-2);
+    font-size: .815rem;
+    margin-bottom: .5rem;
+}
+
+.form-control input {
+    padding: 1.25rem;
+    display: inline-block;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    border: solid 1px var(--transparent-border);
+    margin-bottom: 1.5625rem;
+    font-size: .875rem;
+}
+
+.form-control .btn {
+    margin-bottom: 1.5625rem;
+    background-color: var(--gray-dark-slate);
+    color: var(--white);
+    font-weight: var(--font-weight-2);
+    font-size: .875rem;
+    outline: none;
+    border: none;
+    padding: 1.5625rem 3.125rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* media queries for tablet+ viewport */
+
+@media (min-width: 56.25rem){
+    /* body -display flex to align card in center */
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card-body {
+        flex-direction: row-reverse;
+        border-radius: 25px;
+    }
+    /* hide mobile svg */
+    .img-mobile {
+        display: none;
+    }
+    /* show desktop svg */
+    .img-desk {
+        display: block;
+    }
+    
+    .img-wrapper {
+        padding-right: 1.5625rem;
+        padding-top: 1.5625rem;
+        padding-bottom: 1.5625rem;
+        /* reset mobile margin */
+        margin-bottom: 0;
+    }
+
+    .data-wrapper {
+        /* reset padding */
+        padding: 0;
+        padding-left: 4.0625rem;
+        padding-right: 4.0625rem;
+    }
+
+    .text-wrapper h1 {
+        font-size: 3.35rem;
+        margin-bottom: 1.5875rem;
+    }
+
+    .helper-class {
+        line-height: 1.6;
+    }
+
+    .list-wrapper p {
+        margin-bottom: 1rem;
+    }
+
+}

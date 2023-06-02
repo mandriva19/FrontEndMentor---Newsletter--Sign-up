@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./home.css">
+    <title>Newsletter Form Submission</title>
+</head>
+<body>
+    <!-- main card body flex -->
+    <main class="card-body">
+        <div class="img-wrapper">
+            <!-- mobile img//visible default -->
+            <img class="img-mobile" src="./images/illustration-sign-up-mobile.svg" alt="">
+            <!-- desktop img//hidden default -->
+            <img class="d-none img-desk" src="./images/illustration-sign-up-desktop.svg" alt="">
+        </div>
+        <!-- data wrapper -->
+        <div class="data-wrapper">
+            <div class="text-wrapper">
+                <h1>Stay updated!</h1>
+                <p class="helper-class">
+                    Join 60,000+ product managers receiving monthly <br> updates on:
+                </p>
+                <!-- list items with icons left -->
+                <div class="list-wrapper">
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <p>
+                            Product discovery and building what matters
+                        </p>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <p>
+                            Measuring to ensure updates are a success
+                        </p>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <p>
+                            And much more!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- form wrapper -->
+            <div class="form-control">
+                <label for="email">Email address</label>
+                <input type="email" placeholder="email@company.com">
+                <button class="btn submit-btn">Subscribe to monthly newsletter</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./app.js"></script>
+</body>
+</html>
