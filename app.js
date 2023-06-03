@@ -58,7 +58,7 @@ formInput.addEventListener('keydown', (event) => {
     }
   });
 
-//clear input field on refresh
+//clear input field on reload
 window.addEventListener('beforeunload', () => {
     formInput.value = ''; 
   });
