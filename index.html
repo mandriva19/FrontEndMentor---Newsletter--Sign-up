@@ -5,24 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="./home.css">
     <title>Newsletter Form Submission</title>
 </head>
 <body>
     <!-- main card body flex -->
-    <main class="card-body">
+    <main class="card-main">
         <div class="img-wrapper">
             <!-- mobile img//visible default -->
             <img class="img-mobile" src="./images/illustration-sign-up-mobile.svg" alt="">
             <!-- desktop img//hidden default -->
-            <img class="d-none img-desk" src="./images/illustration-sign-up-desktop.svg" alt="">
+            <img class="img-desk" src="./images/illustration-sign-up-desktop.svg" alt="">
         </div>
         <!-- data wrapper -->
-        <div class="data-wrapper">
+        <div class="data-main">
             <div class="text-wrapper">
                 <h1>Stay updated!</h1>
-                <p class="helper-class">
+                <p>
                     Join 60,000+ product managers receiving monthly <br> updates on:
                 </p>
                 <!-- list items with icons left -->
@@ -51,12 +52,41 @@
             </div>
             <!-- form wrapper -->
             <div class="form-control">
-                <label for="email">Email address</label>
-                <input type="email" placeholder="email@company.com">
-                <button class="btn submit-btn">Subscribe to monthly newsletter</button>
+                <div class="form-label-div">
+                    <label for="email" class="email-label">Email address</label>
+                    <label for="error" class="error-label d-none animate__animated">Valid email required</label>
+                </div>
+                <input class="form-input" type="email" placeholder="email@company.com">
+                <button class="form-control-btn">Subscribe to monthly newsletter</button>
             </div>
+
+            <footer>
+                <div class="attribution">
+                    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+                    Coded by <a href="https://github.com/mandriva19/" target="_blank">Mandriva19</a>.
+                  </div>
+              </footer>
         </div>
+
+
     </main>
+
+    <!-- Success messagePage -->
+    <div class="card-success d-none animate__animated">
+       <div class="card-success-wrapper">
+            <i class="bi bi-check-circle-fill"></i>
+            <div class="card-success-text-wrapper">
+                <h1>Thanks for subscribing!</h1>
+                <p>
+                    A confirmation email has been sent to <span class="email-span"></span> 
+                    Please open it and click the button inside to confirm your subscription.
+                </p>
+            </div>
+            <button class="form-control-btn dismiss-btn">
+                Dismiss message
+            </button>
+       </div>
+    </div>
     
     <script src="./app.js"></script>
 </body>

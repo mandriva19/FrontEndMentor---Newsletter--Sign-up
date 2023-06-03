@@ -11,11 +11,15 @@
 
     /* colors */
     --primary: hsl(4, 100%, 67%);
+    /* lighter primary for linear-gradient */
+    --primary-2: hsl(4, 100%, 76%);
     --gray-dark-slate: hsl(234, 29%, 20%);
     --gray-charcoal: hsl(235, 18%, 26%);
     --gray: hsl(231, 7%, 60%);
     --white: hsl(0, 0%, 100%);
     --transparent-border: rgba(146, 148, 160, 0.4);
+    --transparent-shadow: rgb(255, 98, 87, 0.5);
+    --error: hsl(5, 100%, 95%);
 
     /* font family */
     --font-family: 'Roboto', sans-serif;
@@ -23,10 +27,8 @@
     --font-weight-2: 700;
 }
 
-/* globals and utils */
-*,
-*::before,
-*::after {
+/* globals */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -37,27 +39,21 @@ body {
     background-color: var(--gray-dark-slate);
 }
 
-a {
-    text-decoration: none;
-}
-
-ul,
-li {
-    list-style-type: none;
-}
-
 .d-none {
-    display: none;
+    display: none !important;
+    z-index: -10;
 }
+
 
 /* Markup CSS // mobile first*/
-
-.card-body {
+.card-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--white);    
+    background-color: var(--white); 
+    max-width: 26.25rem;
+    margin: 0 auto;
 }
 
 /* img section */
@@ -65,19 +61,22 @@ li {
     margin-bottom: 3.125rem;
 }
 
-.img-wrapper img {
+.img-mobile {
     max-width: 100%;
 }
 
+/* hide desktop img */
+.img-desk {
+    display: none;
+}
 
-/* data/text sections == h1, list */
-
-.data-wrapper {
+/* data/text sections == h1, p list btn */
+.data-main {
     padding-left: 1.5625rem;
     padding-right: 1.5625rem;
 }
 
-.data-wrapper h1 {
+.data-main h1 {
     margin-bottom: 2.1875rem;
     text-align: left;
     font-size: 2.5rem;
@@ -85,18 +84,13 @@ li {
     font-weight: var(--font-weight-2);  
 }
 
-/* messed up html structure so i used helper class for first p element inside data wrapper */
-.helper-class {
+.text-wrapper > p {
     margin-bottom: 1.875rem;
     line-height: 1.5;
 }
 
 .list-wrapper {
     margin-bottom: 2rem;
-}
-
-.list-wrapper p {
-    margin-bottom: 1.4375rem;
 }
 
 .list-wrapper div {
@@ -110,15 +104,28 @@ li {
     margin-right: 1.0625rem;
 }
 
+.list-wrapper p {
+    margin-bottom: 1.4375rem;
+}
+
 /* form section == input, submit */
 .form-control {
     display: grid;
 }
 
+.form-label-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-label {
+    color: var(--primary);
+}
+
 .form-control label {
     font-weight: var(--font-weight-2);
-    font-size: .815rem;
-    margin-bottom: .5rem;
+    font-size: 0.815rem;
+    margin-bottom: 0.5rem;
 }
 
 .form-control input {
@@ -129,15 +136,22 @@ li {
     border-radius: 10px;
     border: solid 1px var(--transparent-border);
     margin-bottom: 1.5625rem;
-    font-size: .875rem;
+    font-size: 0.875rem;
 }
 
-.form-control .btn {
+/* error state for form input // used in JS in function else statement */
+.form-control-error {
+    border: solid 1px var(--primary) !important;
+    background-color: var(--error);
+    color: var(--primary);
+}
+
+.form-control-btn {
     margin-bottom: 1.5625rem;
     background-color: var(--gray-dark-slate);
     color: var(--white);
     font-weight: var(--font-weight-2);
-    font-size: .875rem;
+    font-size: 0.875rem;
     outline: none;
     border: none;
     padding: 1.5625rem 3.125rem;
@@ -145,20 +159,71 @@ li {
     cursor: pointer;
 }
 
-/* media queries for tablet+ viewport */
+/* Success Message */
+.card-success {
+    background-color: var(--white);
+    max-width: 26.25rem;
+    min-width: 18.4375rem;
+    margin: 0 auto;
+}
 
-@media (min-width: 56.25rem){
-    /* body -display flex to align card in center */
+.card-success-wrapper {
+    margin-left: 1.5625rem;
+    margin-right: 1.5625rem;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: space-between;
+    position: relative;
+}
+
+.card-success-wrapper > i {
+    font-size: 50px;
+    color: var(--primary);
+    position: absolute;
+    top: 180px;
+}
+
+.card-success-wrapper > div {
+    margin-top: 17.5rem;
+}
+
+.card-success-wrapper > div h1 {
+    margin-bottom: 1.575rem;
+}
+
+.card-success-wrapper > button {
+    display: inline-block;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+/* footer -frontEndMentor */
+.attribution,
+.attribution a {
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+    text-align: center;
+    color: var(--gray-charcoal);
+}
+
+/* media queries for + viewport 1000px+*/
+@media (min-width: 62.5rem){
+
     body {
         height: 100vh;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
     }
-    
-    .card-body {
+    /* card - flex direction row and reverse */
+    .card-main {
         flex-direction: row-reverse;
         border-radius: 25px;
+        max-width: 100%;
+        /* margin-top: 6.25rem; */
     }
     /* hide mobile svg */
     .img-mobile {
@@ -167,6 +232,7 @@ li {
     /* show desktop svg */
     .img-desk {
         display: block;
+        max-width: 100%;
     }
     
     .img-wrapper {
@@ -177,7 +243,7 @@ li {
         margin-bottom: 0;
     }
 
-    .data-wrapper {
+    .data-main {
         /* reset padding */
         padding: 0;
         padding-left: 4.0625rem;
@@ -185,11 +251,11 @@ li {
     }
 
     .text-wrapper h1 {
-        font-size: 3.35rem;
+        font-size: 3rem;
         margin-bottom: 1.5875rem;
     }
 
-    .helper-class {
+    .text-wrapper > p {
         line-height: 1.6;
     }
 
@@ -197,4 +263,46 @@ li {
         margin-bottom: 1rem;
     }
 
+    .form-control-btn {
+        transition: 100ms ease-in;
+    }
+
+    .form-control-btn:hover {
+        color: var(--white);
+        background-color: var(--primary);
+        box-shadow: 0px 10px 15px 2px var(--transparent-shadow);
+    }   
+
+    /* Success card media queries */
+    .card-success {
+        width: auto;
+        height: auto;
+        gap: 2.5rem;
+        border-radius: 1.875rem;
+        padding: 3.125rem;
+     /* reset max/min-width properties */
+        max-width: none;
+        min-width: none;
+        max-width: 31.5625rem;
+    }
+
+    .card-success-wrapper {
+        height: auto;
+        width: auto;
+        gap: 2.5rem;  
+    }
+
+    .card-success-wrapper i {
+        position: static;
+        font-size: 60px;
+    }
+
+    .card-success-wrapper div {
+        margin: 0;
+        padding: 0;
+    }
+
+    .card-success h1 {
+        font-size: 3rem;
+    }
 }
