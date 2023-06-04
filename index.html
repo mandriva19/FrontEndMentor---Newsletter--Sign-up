@@ -1,97 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- bootstrap icons !-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
     <!-- animate.style library !-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <!-- include favicon !-->
-    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
     <!-- just home css stylesheet !-->
-    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./home.css" />
     <title>Newsletter Form Submission | FrontEndMentor</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- main card body flex -->
     <main class="card-main">
-        <div class="img-wrapper">
-            <!-- mobile img//visible default -->
-            <img class="img-mobile" src="./images/illustration-sign-up-mobile.svg" alt="">
-            <!-- desktop img//hidden default -->
-            <img class="img-desk" src="./images/illustration-sign-up-desktop.svg" alt="">
-        </div>
-        <!-- data wrapper -->
-        <div class="data-main">
-            <div class="text-wrapper">
-                <h1>Stay updated!</h1>
-                <p>
-                    Join 60,000+ product managers receiving monthly updates on:
-                </p>
-                <!-- list items with icons left -->
-                <div class="list-wrapper">
-                    <div>
-                        <i class="bi bi-check-circle-fill"></i>
-                        <p>
-                            Product discovery and building what matters
-                        </p>
-                    </div>
-
-                    <div>
-                        <i class="bi bi-check-circle-fill"></i>
-                        <p>
-                            Measuring to ensure updates are a success
-                        </p>
-                    </div>
-
-                    <div>
-                        <i class="bi bi-check-circle-fill"></i>
-                        <p>
-                            And much more!
-                        </p>
-                    </div>
-                </div>
+      <div class="img-wrapper">
+        <!-- mobile img//visible default -->
+        <img
+          class="img-mobile"
+          src="./images/illustration-sign-up-mobile.svg"
+          alt=""
+        />
+        <!-- desktop img//hidden default -->
+        <img
+          class="img-desk"
+          src="./images/illustration-sign-up-desktop.svg"
+          alt=""
+        />
+      </div>
+      <!-- data wrapper -->
+      <div class="data-main">
+        <div class="text-wrapper">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <!-- list items with icons left -->
+          <div class="list-wrapper">
+            <div>
+              <i class="bi bi-check-circle-fill"></i>
+              <p>Product discovery and building what matters</p>
             </div>
-            <!-- form wrapper -->
-            <div class="form-control">
-                <div class="form-label-div">
-                    <label for="email" class="email-label">Email address</label>
-                    <label for="error" class="error-label d-none animate__animated">Valid email required</label>
-                </div>
-                <input class="form-input" type="email" placeholder="email@company.com">
-                <button class="form-control-btn">Subscribe to monthly newsletter</button>
+
+            <div>
+              <i class="bi bi-check-circle-fill"></i>
+              <p>Measuring to ensure updates are a success</p>
             </div>
-            <!-- frontendmentor footer inside card body !-->
-            <footer>
-                <div class="attribution">
-                    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-                    Coded by <a href="https://github.com/mandriva19/" target="_blank">Mandriva19</a>.
-                  </div>
-              </footer>
+
+            <div>
+              <i class="bi bi-check-circle-fill"></i>
+              <p>And much more!</p>
+            </div>
+          </div>
         </div>
-
-
+        <!-- form wrapper -->
+        <div class="form-control">
+          <div class="form-label-div">
+            <label for="email" class="email-label">Email address</label>
+            <label for="error" class="error-label d-none animate__animated"
+              >Valid email required</label
+            >
+          </div>
+          <input
+            class="form-input"
+            type="email"
+            placeholder="email@company.com"
+          />
+          <button class="form-control-btn">
+            Subscribe to monthly newsletter
+          </button>
+        </div>
+        <!-- frontendmentor footer inside card body !-->
+        <footer>
+          <div class="attribution">
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. Coded by
+            <a href="https://github.com/mandriva19/" target="_blank"
+              >Mandriva19</a
+            >.
+          </div>
+        </footer>
+      </div>
     </main>
 
     <!-- Success messagePage // hidden by default -->
     <div class="card-success d-none animate__animated">
-       <div class="card-success-wrapper">
-            <i class="bi bi-check-circle-fill"></i>
-            <div class="card-success-text-wrapper">
-                <h1>Thanks for subscribing!</h1>
-                <p>
-                    A confirmation email has been sent to <span class="email-span"></span> 
-                    Please open it and click the button inside to confirm your subscription.
-                </p>
-            </div>
-            <button class="form-control-btn dismiss-btn">
-                Dismiss message
-            </button>
-       </div>
+      <div class="card-success-wrapper">
+        <i class="bi bi-check-circle-fill"></i>
+        <div class="card-success-text-wrapper">
+          <h1>Thanks for subscribing!</h1>
+          <p>
+            A confirmation email has been sent to
+            <span class="email-span"></span>
+            Please open it and click the button inside to confirm your
+            subscription.
+          </p>
+        </div>
+        <button class="form-control-btn dismiss-btn">Dismiss message</button>
+      </div>
     </div>
-    
+
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>
