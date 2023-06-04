@@ -165,9 +165,9 @@ p {
 /* Success Message */
 .card-success {
     background-color: var(--white);
-    max-width: 26.25rem;
     min-width: 18.4375rem;
-    margin: 0 auto;
+    max-width: 23.4375rem;
+    margin: 1.5625rem auto;
 }
 
 .card-success-wrapper {
