@@ -54,7 +54,7 @@ p {
   justify-content: center;
   align-items: center;
   background-color: var(--white);
-  max-width: 23.4375rem;
+  max-width: 35rem;
   margin: 0 auto;
 }
 
@@ -165,7 +165,7 @@ p {
   background-color: var(--white);
   min-width: 18.4375rem;
   max-width: 23.4375rem;
-  margin: 1.5625rem auto;
+  margin: 0 auto;
 }
 
 .card-success-wrapper {
@@ -210,7 +210,7 @@ p {
 .attribution,
 .attribution a {
   font-size: 0.75rem;
-  margin-bottom: 2px;
+  margin-bottom: 0.4375rem;
   text-align: center;
   color: var(--gray-charcoal);
 }
