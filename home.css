@@ -18,6 +18,7 @@
   --transparent-border: rgba(146, 148, 160, 0.4);
   --transparent-shadow: rgb(255, 98, 87, 0.5);
   --error: hsl(5, 100%, 95%);
+  --linear: linear-gradient(#ff6257, #ff8d85);
 
   /* font family */
   --font-family: "Roboto", sans-serif;
@@ -54,7 +55,7 @@ p {
   justify-content: center;
   align-items: center;
   background-color: var(--white);
-  max-width: 35rem;
+  max-width: 23.4375rem;
   margin: 0 auto;
 }
 
